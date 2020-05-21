@@ -1,0 +1,9 @@
+<view class="snacksmark-index">
+  <!-- 轮播图开始 -->
+  <swipers/>
+  <!-- 轮播图结束 -->
+  <!-- 精选主题开始 -->
+  <view class="snacksmark-index-"></view>
+  <!-- 精选主题结束 -->
+  // ene 
+</view>

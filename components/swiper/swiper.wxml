@@ -1,0 +1,5 @@
+  <view class="snacksmark-index-swiper">
+    <swiper autoplay="true" circular="true" interval="2000" indicator-dots="true" indicator-color="#000" indicator-active-color="gray">
+      <swiper-item wx:for="{{slide_data}}"><image src="{{item}}"></image></swiper-item>
+    </swiper>
+  </view>

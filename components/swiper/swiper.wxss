@@ -1,0 +1,9 @@
+.snacksmark-index-swiper{
+  height: 380rpx;
+}
+swiper{
+  height: 380rpx;
+}
+swiper-item{
+  height: 380rpx;
+}
