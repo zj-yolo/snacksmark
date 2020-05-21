@@ -1,13 +1,43 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/my/index",
+    "pages/goods_detail/index",
+    "pages/fruitworld/index",
+    "pages/newgoods/index",
+    "pages/drifood/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#ab946d",
     "navigationBarTitleText": "零食商城",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "selectedColor": "#ab946d",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页",
+      "iconPath": "/image/home.png",
+      "selectedIconPath": "/image/home-o.png"
+    },{
+      "pagePath": "pages/category/index",
+      "text": "分类",
+      "iconPath": "/image/category.png",
+      "selectedIconPath": "/image/category-o.png"
+    },{
+      "pagePath": "pages/cart/index",
+      "text": "购物车",
+      "iconPath": "/image/navigator.png",
+      "selectedIconPath": "/image/navigator-o.png"
+    },{
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "/image/my.png",
+      "selectedIconPath": "/image/my-o.png"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -3,7 +3,29 @@
   <swipers/>
   <!-- 轮播图结束 -->
   <!-- 精选主题开始 -->
-  <view class="snacksmark-index-"></view>
+  <view class="snacksmark-index-theme">
+    <view class="snacksmark-index-theme-title">精选主题</view>
+    <view class="snacksmark-index-theme-list">
+    <!-- 美味水果世界 -->
+      <navigator url="../fruitworld/index" >
+        <image src="../../image/s1.png"></image>
+      </navigator>
+      <!-- 新品首发 -->
+      <navigator url="../newgoods/index">
+        <image src="../../image/s2.png"></image>
+      </navigator>
+      <!-- 干物 -->
+      <navigator url="../drifood/index">
+        <image src="../../image/s3.png"></image>
+      </navigator>
+    </view>
+  </view>
   <!-- 精选主题结束 -->
-  // ene 
+  <!-- 最近新品开始 -->
+  <view class="snacksmark-index-news">
+    <view class="snacksmark-index-news-title">最近新品</view>
+    <!-- 使用组件引入样式 -->
+    <goodslist goodsList="{{newest}}"/>
+  <!-- 最近新品结束 -->
+  </view>
 </view>

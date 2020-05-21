@@ -1,0 +1,12 @@
+  <!-- 背景图 -->
+  <view class="snacksmark-banner" wx:if="{{goodsList.bannerList}}">
+    <image src="{{goodsList.bannerList[0]}}"></image>
+  </view>
+  <!-- 商品列表 -->
+  <view class="snacksmark-list">
+    <view class="snacksmark-list-item" wx:for="{{goodsList.shopList}}" wx:key="id">
+      <navigator url="/pages/goods_detail/index?id={{item.id}}" ><image src="{{item.imageUrl}}"></image></navigator>
+      <view>{{item.title}} {{item.count}}{{item.unit}}</view>
+      <view>¥{{item.price}}</view>
+    </view>
+  </view>

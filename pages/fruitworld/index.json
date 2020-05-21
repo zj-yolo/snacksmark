@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goodsList":"../../components/goodslist/goodslist"
+  },
+  "navigationBarTitleText": "美味水果世界"
+}

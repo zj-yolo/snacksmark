@@ -1,0 +1,40 @@
+<view class="snacksmark-goodsdetail">
+  <!-- 商品图片 -->
+  <view class="snacksmark-goodsdetail-head">
+    <view class="snacksmark-goodsdetail-pic">
+      <image src="{{detaildata[option].imageUrl}}"></image>
+    </view>
+    <view class="snacksmark-goodsdetail-cart">
+      <image src="../../image/cart.png"></image>
+    </view>
+  </view>
+  <!-- 商品操作 -->
+  <view class="snacksmark-goodsdetail-opt">
+    <view>数量{{detaildata[option].count}}{{detaildata[option].unit}}</view>
+    <view class="snacksmark-goodsdetail-opt-add">+</view>
+    <view>加入购物车</view>
+    <view class="snacksmark-goodsdetail-opt-cart">
+      <image src="../../image/cart-o.png"></image>
+    </view>
+  </view>
+  <!-- 商品信息 -->
+  <view class="snacksmark-goodsdetail-msg">
+    <view class="snacksmark-goodsdetail-msg-stock">{{detaildata[option].stock}}</view>
+    <view class="snacksmark-goodsdetail-msg-title">{{detaildata[option].title}}</view>
+    <view class="snacksmark-goodsdetail-msg-price">¥{{detaildata[option].price}}</view>
+  </view>
+  <!-- 分割区 -->
+  <view class="snacksmark-goodsdetail-division"></view>
+  <!-- 商品详情信息 -->
+  <view class="snacksmark-goodsdetail-section">
+    <view class="snacksmark-goodsdetail-section-header">
+      <view class="active">商品详情</view>
+      <view>产品参数</view>
+      <view>售后保障</view>
+    </view>
+    <view class="snacksmark-goodsdetail-section-detail">
+    {{detaildata[option].detail}}</view>
+    <view class="snacksmark-goodsdetail-section-param">{{detaildata[option].parameter}}</view>
+    <view class="snacksmark-goodsdetail-section-service">{{detaildata[option].service}}</view>
+  </view>
+</view>

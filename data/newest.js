@@ -1,5 +1,5 @@
 module.exports = {
-  newest: [  //最近新品数据
+  shopList: [  //最近新品数据
     {
       id: 'guazi',
       imageUrl: '/image/s4.png',

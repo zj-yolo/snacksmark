@@ -1,21 +1,31 @@
-/**index.wxss**/
-.userinfo {
+.snacksmark-index-theme .snacksmark-index-theme-title {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100rpx;
+  color: var(--themeColor);
+  font-size: 34rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.snacksmark-index-theme .snacksmark-index-theme-list {
+  display: flex;
+  flex-wrap: wrap ;
+  padding-left: 5rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.snacksmark-index-theme .snacksmark-index-theme-list navigator {
+  width: 50%;
+  padding-right: 5rpx;
+  height: 360rpx;
 }
-
-.usermotto {
-  margin-top: 200px;
+.snacksmark-index-theme .snacksmark-index-theme-list navigator:last-child {
+  padding-top: 5rpx;
+  width: 100%;
+}
+.snacksmark-index-news .snacksmark-index-news-title {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rpx;
+  color: var(--themeColor);
+  font-size: 34rpx;
 }

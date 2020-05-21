@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goodsList":"../../components/goodslist/goodslist"
+  },
+  "navigationBarTitleText": "新品首发"
+}

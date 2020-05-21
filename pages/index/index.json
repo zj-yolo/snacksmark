@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "swipers":"../../components/swiper/swiper"
+    "swipers":"../../components/swiper/swiper",
+    "goodslist":"../../components/goodslist/goodslist"
   }
 }

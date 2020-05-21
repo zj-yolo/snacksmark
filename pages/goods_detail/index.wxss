@@ -1,0 +1,80 @@
+.snacksmark-goodsdetail-head {
+  height: 480rpx;
+  position: relative;
+}
+.snacksmark-goodsdetail-head .snacksmark-goodsdetail-pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 300rpx;
+  width: 300rpx;
+}
+.snacksmark-goodsdetail-head .snacksmark-goodsdetail-cart {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  height: 100rpx;
+  width: 100rpx;
+}
+.snacksmark-goodsdetail-opt {
+  margin: 0 auto;
+  width: 90%;
+  padding: 0 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  background-color: var(--themeColor);
+  border-radius: 50rpx;
+}
+.snacksmark-goodsdetail-opt view {
+  color: #fff;
+}
+.snacksmark-goodsdetail-opt .snacksmark-goodsdetail-opt-add {
+  width: 50rpx;
+}
+.snacksmark-goodsdetail-opt .snacksmark-goodsdetail-opt-cart {
+  width: 60rpx;
+  height: 60rpx;
+}
+.snacksmark-goodsdetail-msg {
+  margin: 40rpx 0;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.snacksmark-goodsdetail-msg .snacksmark-goodsdetail-msg-stock {
+  font-size: 28rpx;
+}
+.snacksmark-goodsdetail-msg .snacksmark-goodsdetail-msg-title {
+  font-size: 38rpx;
+}
+.snacksmark-goodsdetail-msg .snacksmark-goodsdetail-msg-price {
+  font-size: 48rpx;
+}
+.snacksmark-goodsdetail-division {
+  height: 40rpx;
+  background-color: #ededed;
+}
+.snacksmark-goodsdetail-section .snacksmark-goodsdetail-section-header {
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.snacksmark-goodsdetail-section .snacksmark-goodsdetail-section-header view {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c7c7cb;
+  border-bottom: 5rpx solid #c7c7cb;
+}
+.snacksmark-goodsdetail-section .snacksmark-goodsdetail-section-header .active {
+  color: var(--themeColor);
+  border-bottom: 5rpx solid var(--themeColor);
+}

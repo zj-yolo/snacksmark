@@ -1,0 +1,23 @@
+<view class="snacksmark-category">
+    <!-- 左边开始 -->
+    <scroll-view scroll-y class="snacksmark-category-left" >
+      <view class="snacksmark-category-left-item {{index==current_index?'active':''}}" bindtap="getcartdetail" data-id="{{index}}" wx:for="{{cartdetail}}" wx:key="id">{{item.cate}}</view>
+    </scroll-view>
+    <!-- 左边结束 -->
+    <!-- 右边开始 -->
+    <scroll-view scroll-y class="snacksmark-category-right">
+      <navigator url="/pages/fruitworld/index" class="snacksmark-category-right-banner">
+          <image src="{{cartdetail[0].banner}}"></image>
+      </navigator>
+      <view class="snacksmark-category-right-name">—— {{cartdetail[current_index].cate}} ——</view>
+      <view class="snacksmark-category-right-list">
+        <view class="snacksmark-category-right-list-item" wx:for="{{cartdetail[current_index].detail}}">
+          <navigator url="/pages/goods_detail/index?id={{item.id}}">
+            <image src="{{item.thumb}}"></image>
+            <view>{{item.name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+    <!-- 右边结束 -->
+</view>
