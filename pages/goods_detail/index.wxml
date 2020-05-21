@@ -5,16 +5,19 @@
       <image src="{{detaildata[option].imageUrl}}"></image>
     </view>
     <view class="snacksmark-goodsdetail-cart">
+    <navigator url="/pages/cart/index" open-type="switchTab">
       <image src="../../image/cart.png"></image>
+    </navigator>
+    <view class="snacksmark-goodsdetail-cart-num">{{totalgoods}}</view>
     </view>
   </view>
   <!-- 商品操作 -->
   <view class="snacksmark-goodsdetail-opt">
     <view>数量{{detaildata[option].count}}{{detaildata[option].unit}}</view>
-    <view class="snacksmark-goodsdetail-opt-add">+</view>
+    <view class="snacksmark-goodsdetail-opt-add" bindtap="handleAddnum">+</view>
     <view>加入购物车</view>
-    <view class="snacksmark-goodsdetail-opt-cart">
-      <image src="../../image/cart-o.png"></image>
+    <view class="snacksmark-goodsdetail-opt-cart" bindtap="handleAddtocart">
+      <image src="../../image/cart-o.png" ></image>
     </view>
   </view>
   <!-- 商品信息 -->
@@ -28,13 +31,13 @@
   <!-- 商品详情信息 -->
   <view class="snacksmark-goodsdetail-section">
     <view class="snacksmark-goodsdetail-section-header">
-      <view class="active">商品详情</view>
-      <view>产品参数</view>
-      <view>售后保障</view>
+      <view bindtap="handlegoods" data-id="detail" class="{{selected=='detail'?'active':''}}">商品详情</view>
+      <view  bindtap="handlegoods" data-id="param"  class="{{selected=='param'?'active':''}}">产品参数</view>
+      <view  bindtap="handlegoods" data-id="service"  class="{{selected=='service'?'active':''}}">售后保障</view>
     </view>
-    <view class="snacksmark-goodsdetail-section-detail">
+    <view class="snacksmark-goodsdetail-section-item" wx:if="{{selected=='detail'}}">
     {{detaildata[option].detail}}</view>
-    <view class="snacksmark-goodsdetail-section-param">{{detaildata[option].parameter}}</view>
-    <view class="snacksmark-goodsdetail-section-service">{{detaildata[option].service}}</view>
+    <view class="snacksmark-goodsdetail-section-item" wx:if="{{selected=='param'}}">{{detaildata[option].parameter}}</view>
+    <view class="snacksmark-goodsdetail-section-item" wx:if="{{selected=='service'}}">{{detaildata[option].service}}</view>
   </view>
 </view>

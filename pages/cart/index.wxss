@@ -1,1 +1,88 @@
-/* pages/cart/index.wxss */
+.snacksmark-cart-list .snacksmark-cart-list-item {
+  height: 180rpx;
+  border-bottom: 2rpx solid #eee;
+  display: flex;
+  padding: 20rpx;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-left .activechk {
+  background-color: red;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-left .snacksmark-cart-list-item-chk {
+  position: relative;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 2rpx solid #eee;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-left .snacksmark-cart-list-item-chk text {
+  position: absolute;
+  top: 0%;
+  left: 24%;
+  color: #fff;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-right {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 80rpx;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-right .snacksmark-cart-list-item-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30rpx;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-right .snacksmark-cart-lsit-item-opr {
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-around;
+}
+.snacksmark-cart-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: var(--themeColor);
+  display: flex;
+  padding: 0 20rpx;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 36rpx;
+}
+.snacksmark-cart-footer .snacksmark-cart-footer-allchk {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.snacksmark-cart-footer .snacksmark-cart-footer-allchk .snacksmark-cart-footer-allchk-icon {
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+  margin: 0 20rpx;
+}
+.snacksmark-cart-footer .snacksmark-cart-footer-allchk .snacksmark-cart-footer-allchk-icon text {
+  position: absolute;
+  top: -8%;
+  left: 20%;
+}
+.snacksmark-cart-footer .snacksmark-cart-footer-total {
+  display: flex;
+  align-items: center;
+}
+.snacksmark-cart-footer .snacksmark-cart-footer-total .snacksmark-cart-footer-total-money {
+  color: #fff;
+  margin-right: 30rpx;
+}
+.snacksmark-cart-footer .snacksmark-cart-footer-total .snacksmark-cart-footer-total-icon {
+  width: 40rpx;
+  height: 40rpx;
+}

@@ -6,21 +6,61 @@ Page({
    */
   data: {
     detaildata:[],
-    option:"guazi"
+    option:"guazi",
+    selected:"detail",
+    totalgoods:0,
+    // 购物车数据
+    cartItems:[]
   },
+  // 获取商品数据
   getDetaildataFun:function(){
     let detaildata = require("../../data/details-data.js")
     this.setData({
       detaildata:detaildata
     })
   },
+  // 点击商品详情
+  handlegoods:function(e){
+    this.setData({
+      selected: e.currentTarget.dataset.id
+    })
+  },
+  // 增加数量
+  handleAddnum:function(e){
+    let num = this.data.totalgoods
+    this.setData({
+      totalgoods: ++num
+    })
+  },
+  // 添加到购物车
+  handleAddtocart:function(e){
+    let item = this.data.detaildata[this.data.option]
+    // 当前要添加到购物车的数据
+    let cartItems ={
+      "title":item.title,
+      "count":item.count,
+      "unit":item.unit,
+      "price":item.price,
+      "num": this.data.totalgoods,
+      "itemchk":false
+    }
+    let items = wx.getStorageSync("cartItems") || []
+    items.push(cartItems)
+  console.log(items)
+    this.setData({
+      cartItems:items
+    })
+    wx.setStorageSync("cartItems", items)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     // 获取到子组件传来的id值
-    // console.log(options)
     this.getDetaildataFun()
+    this.setData({
+      cartItems: wx.getStorageSync("cartItems")
+    })
     // this.setData({
     //   option:options.id
     // })

@@ -1,2 +1,43 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="snacksmark-cart">
+  <!-- 购物车数据 -->
+  <block wx:if="{{}}"></block>
+  <block wx:else></block>
+  <view class="snacksmark-cart-list">
+    <view class="snacksmark-cart-list-item" wx:for="{{cartItems}}" wx:key="title">
+    <view  class="snacksmark-cart-list-item-left">
+      <view  class="snacksmark-cart-list-item-chk {{item.itemchk ? 'activechk' : ' ' }} " bindtap="handleItemchk" data-id="{{index}}"><text wx:if="{{item.itemchk }}">√</text></view>
+    </view>
+      <view  class="snacksmark-cart-list-item-right">
+        <view  class="snacksmark-cart-list-item-section">
+          <view class="snacksmark-cart-lsit-item-section-msg">
+            {{item.title}}  {{item.count}}{{item.unit}}
+          </view>
+          <view class="snacksmark-cart-lsit-item-section-price">￥{{item.price}}</view>
+        </view>
+        <view class="snacksmark-cart-lsit-item-opr">
+          <view class="snacksmark-cart-lsit-item-opr-red" bindtap="handlRednum" data-id="{{index}}">-</view>
+          <view class="snacksmark-cart-list-item-opr-num">{{item.num}}</view>
+          <view class="snacksmark-cart-lsit-item-opr-add" bindtap="handlAddnum" data-id="{{index}}">+</view>
+          <view class="snacksmark-cart-lsit-item-opr-rem" bindtap="handlRemnum" data-id="{{index}}">x</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部全选 -->
+  <view class="snacksmark-cart-footer">
+    <view class="snacksmark-cart-footer-allchk">
+      <view class="snacksmark-cart-footer-allchk-icon" bindtap="handleAllchk">
+        <text wx:if="{{allchk}}">√</text>
+      </view>
+      <view class="snacksmark-cart-footer-allchk-world">全选</view>
+    </view>
+    <view  class="snacksmark-cart-footer-total">
+      <view class="snacksmark-cart-footer-total-money">
+        ￥{{totalmoney}}
+      </view>
+      <navigator class="snacksmark-cart-footer-total-icon" >
+        <image src="../../image/icon3.png"></image>
+      </navigator>
+    </view>
+  </view>
+</view>

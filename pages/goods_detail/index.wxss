@@ -10,12 +10,26 @@
   height: 300rpx;
   width: 300rpx;
 }
-.snacksmark-goodsdetail-head .snacksmark-goodsdetail-cart {
+.snacksmark-goodsdetail-head .snacksmark-goodsdetail-cart navigator {
   position: absolute;
   top: 10%;
   right: 5%;
   height: 100rpx;
   width: 100rpx;
+}
+.snacksmark-goodsdetail-head .snacksmark-goodsdetail-cart .snacksmark-goodsdetail-cart-num {
+  position: absolute;
+  top: 7%;
+  right: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--themeColor);
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 30rpx;
 }
 .snacksmark-goodsdetail-opt {
   margin: 0 auto;
@@ -77,4 +91,7 @@
 .snacksmark-goodsdetail-section .snacksmark-goodsdetail-section-header .active {
   color: var(--themeColor);
   border-bottom: 5rpx solid var(--themeColor);
+}
+.snacksmark-goodsdetail-section .snacksmark-goodsdetail-section-item {
+  padding: 30rpx;
 }
