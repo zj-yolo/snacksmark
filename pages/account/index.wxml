@@ -1,0 +1,34 @@
+<view class="snacksmark-account">
+  <block wx:if="{{useraddress==''}}">
+    <button bindtap="getUseraddress">获取收货地址</button>
+  </block>
+  <block wx:else> 
+    <view class="snacksmark-account-address">
+      <view class="snacksmark-account-address-name">收货人:{{useraddress.userName}}</view>
+      <view class="snacksmark-account-address-tel">电话:{{useraddress.telNumber}}</view>
+      <view class="snacksmark-account-address-msg">{{useraddress.provinceName}}{{useraddress.cityName}}{{useraddress.countyName}}{{useraddress.detailInfo}},邮编{{useraddress.postalCode}}</view>
+    </view>
+    <!-- 分割区 -->
+    <view class="snacks-account-division"></view>
+    <!-- 商品列表 -->
+    <view class="snacks-account-list">
+      <view class="snacks-account-list-item" wx:for="{{selecteditem}}" wx:key="item">
+        <view class="snacks-account-list-item-img">
+          <image src="{{item.image}}"></image>
+        </view>
+        <view class="snacks-account-list-item-msg">
+          <view>{{item.title}}</view>
+          <view>￥{{item.price}}</view>
+          <view>x{{item.num}}</view>
+        </view>
+
+      </view>
+    </view>
+
+    <!-- 底部操作 -->
+    <view class="snacksmark-account-footer">
+      <view class="snacksmark-account-footer-left">付款合计: ￥{{totalmoney}}</view>
+      <view class="snacksmark-account-footer-right">去付款</view>
+    </view>
+  </block>
+</view>

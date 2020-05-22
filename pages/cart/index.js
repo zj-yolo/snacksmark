@@ -1,14 +1,14 @@
 // pages/cart/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     totalmoney:"0.00",
     allchk:false,
     // 本地存储的购物车数据
     cartItems:[]
+  },
+  // ddddd
+  ddddd:function(e){
+    console.log(e)
   },
   // 点击全选
   handleAllchk:function(){
@@ -17,12 +17,35 @@ Page({
     this.data.cartItems.forEach((e)=>{
       e.itemchk = !allchk
     })
+    // 计算选中价格
+   this.changetotal()
     this.setData({
       allchk:!allchk,
-      cartItems:this.data.cartItems
+      cartItems:this.data.cartItems,
     })
     wx.setStorageSync("cartItems", this.data.cartItems)
   },
+    // 封装函数,修改总价(全选的时候)
+    changetotal:function(){
+      // 总价
+      let resulttotal
+      // 全选选中的是时候,因为未设置,需要取反
+      if(!this.data.allchk){
+          let resultarr = this.data.cartItems.map((e)=>{
+            return e.price * e.num
+          })
+          const reducer = (accumulator, currentValue) => accumulator + currentValue;
+          resulttotal = (resultarr.reduce(reducer)).toFixed(2)
+          this.setData({
+            totalmoney:resulttotal
+          })
+        }else{
+          this.setData({
+            totalmoney:"0.00"
+          })
+        }
+        wx.setStorageSync('totalmoney',this.data.totalmoney)
+    },
   //每个item的全选
    handleItemchk:function(e){
     //  获取到是哪个item的按钮被点击
@@ -33,19 +56,49 @@ Page({
     let result =  this.data.cartItems.every((e) => {
        return e.itemchk==true
      })
+    //  计算totalmoney
+    let totalmoney = 0
+    this.data.cartItems.filter(e=>{
+      if(e.itemchk){
+        totalmoney += Number(e.price * e.num)
+      }
+    })
     //  更新数据
      this.setData({
        cartItems:this.data.cartItems,
-       allchk:result
+       allchk:result,
+       totalmoney:totalmoney.toFixed(2)
      })
      wx.setStorageSync("cartItems", this.data.cartItems)
+     wx.setStorageSync("totalmoney", this.data.totalmoney)
    },
+
   //  减少数量
   handlRednum:function(e){
     let index = e.currentTarget.dataset.id
     let num = this.data.cartItems[index].num
     num--
+    if(num <= 0){
+      num = 0
+    }
     this.data.cartItems[index].num = num
+    if(this.data.cartItems[index].num === 0){
+      wx.showModal({
+        title: '提示',
+        content: '是否删除该商品?',
+        success: function(res){
+          console.log(res)
+        }
+      })
+    }
+    // 计算总价
+    if(this.data.cartItems[index].itemchk){
+      this.data.totalmoney =  Number(this.data.totalmoney) - Number(this.data.cartItems[index].price)
+      this.setData({
+        totalmoney:(this.data.totalmoney).toFixed(2)
+      })
+      wx.setStorageSync("totalmoney", this.data.totalmoney)
+    }
     this.setData({
       cartItems:this.data.cartItems
     })
@@ -57,6 +110,14 @@ Page({
     let num = this.data.cartItems[index].num
     num++
     this.data.cartItems[index].num = num
+        // 计算总价
+        if(this.data.cartItems[index].itemchk){
+          this.data.totalmoney =  Number(this.data.totalmoney) + Number(this.data.cartItems[index].price)
+          this.setData({
+            totalmoney:(this.data.totalmoney).toFixed(2)
+          })
+          wx.setStorageSync("totalmoney", this.data.totalmoney)
+        }
     this.setData({
       cartItems: this.data.cartItems
     })
@@ -65,6 +126,14 @@ Page({
   // 删除item
   handlRemnum:function(e){
     let index = e.currentTarget.dataset.id
+        // 计算总价
+        if(this.data.cartItems[index].itemchk){
+          this.data.totalmoney =  Number(this.data.totalmoney) - Number(this.data.cartItems[index].price * this.data.cartItems[index].num) 
+          this.setData({
+            totalmoney:(this.data.totalmoney).toFixed(2)
+          })
+          wx.setStorageSync("totalmoney", this.data.totalmoney)
+        }
     // 删除index所在的位置
     this.data.cartItems.splice(index,1)
     this.setData({
@@ -72,22 +141,27 @@ Page({
     })
     wx.setStorageSync("cartItems", this.data.cartItems)
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  // 获取选中的商品
+  getselecteditem:function(){
+    let selecteditem = this.data.cartItems.filter(e=>{
+      return e.itemchk == true
+    })
+    wx.setStorageSync('selecteditem', selecteditem)
+  },
+
+  onShow: function () {
     //  单选影响全选
     let cartdata = wx.getStorageSync("cartItems")
     let result = cartdata.every((e) => {
       return e.itemchk == true
     }) 
-    // if (cartdata == []){
-    //   console.log("result")
-    //   result = false
-    // } 
+    if(cartdata.length === 0){
+      result = false
+    }
     this.setData({
       cartItems: cartdata,
-      allchk: result
+      allchk: result,
+      totalmoney:wx.getStorageSync('totalmoney')
     })
   },
 
@@ -101,9 +175,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  // onShow: function () {
+  //   // this.changetotal()
+  // },
 
   /**
    * 生命周期函数--监听页面隐藏

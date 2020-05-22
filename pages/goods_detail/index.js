@@ -6,7 +6,7 @@ Page({
    */
   data: {
     detaildata:[],
-    option:"guazi",
+    option:"",
     selected:"detail",
     totalgoods:0,
     // 购物车数据
@@ -37,6 +37,7 @@ Page({
     let item = this.data.detaildata[this.data.option]
     // 当前要添加到购物车的数据
     let cartItems ={
+      "image":item.imageUrl,
       "title":item.title,
       "count":item.count,
       "unit":item.unit,
@@ -61,9 +62,9 @@ Page({
     this.setData({
       cartItems: wx.getStorageSync("cartItems")
     })
-    // this.setData({
-    //   option:options.id
-    // })
+    this.setData({
+      option:options.id
+    })
   },
 
   /**

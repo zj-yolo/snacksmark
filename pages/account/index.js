@@ -1,28 +1,42 @@
-// pages/my/index.js
+// pages/account/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userinfo:''
-
+    useraddress:'',
+    totalmoney:"0.00",
+    cartItems:[],
+    selecteditem:[]
   },
-  // 获取用户信息
-  getuserinfo:function(e){
-    this.setData({
-      userinfo:e.detail.userInfo
+  getUseraddress:function(e){
+    let useraddress = {}
+    // 获取用户地址
+    wx.chooseAddress({
+      complete: (res) => {
+        useraddress = res
+        console.log(useraddress.length)
+        this.setData({
+          useraddress
+        })
+        wx.setStorageSync('useraddress', useraddress)
+      },
     })
-    wx.setStorageSync('userinfo', e.detail.userInfo)
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userinfo = wx.getStorageSync('userinfo')
+    let useraddress = wx.getStorageSync('useraddress')
+    let totalmoney = wx.getStorageSync('totalmoney')
+    let cartItems = wx.getStorageSync('cartItems')
+    let selecteditem = wx.getStorageSync('selecteditem')
     this.setData({
-      userinfo
+      useraddress,
+      totalmoney,
+      cartItems,
+      selecteditem
     })
   },
 

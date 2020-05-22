@@ -1,4 +1,9 @@
 // 购物车数据
+.snacksmark-cart-emp{
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+}
 .snacksmark-cart-list {
     .snacksmark-cart-list-item {
         height: 180rpx;
@@ -19,49 +24,33 @@
                 height: 60rpx;
                 border-radius: 50%;
                 border: 2rpx solid #eee;
-                text {
+                icon {
                     position: absolute;
-                    top: 0%;
-                    left: 24%;
-                    color: #fff;
+                    top: -3rpx;
+                    left: -2rpx;
                 }
             }
+        }
+        .snacksmark-cart-list-item-section-img{
+            width:150rpx;
+            height: 150rpx;
         }
         .snacksmark-cart-list-item-right {
             flex: 4;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding-left: 80rpx;
+            // padding-left: 80rpx;
             .snacksmark-cart-list-item-section {
                 display: flex;
                 justify-content: space-around;
-                padding: 0 30rpx;
-                .snacksmark-cart-lsit-item-section-msg {
-                    
-                }
-                .snacksmark-cart-lsit-item-section-price {
-                }
+                padding: 10rpx 30rpx;
+
             }
             .snacksmark-cart-lsit-item-opr {
                 display: flex;
                 padding: 0 30rpx;
                 justify-content: space-around;
-                .snacksmark-cart-lsit-item-opr-red {
-                    
-  
-                }
-  
-                .snacksmark-cart-list-item-opr-num {
-  
-                }
-  
-                .snacksmark-cart-lsit-item-opr-add {
-  
-                }
-  
-                .snacksmark-cart-lsit-item-opr-rem {
-                }
         }
       }
     }
@@ -91,10 +80,10 @@
             border-radius: 50%;
             border: 2rpx solid #fff;
             margin: 0 20rpx;
-            text{
+            icon{
                 position: absolute;
-                top: -8%;
-                left: 20%;
+                top: -4rpx;
+                left: -3px;
             }
         }
     }

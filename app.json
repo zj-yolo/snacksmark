@@ -4,6 +4,7 @@
     "pages/category/index",
     "pages/cart/index",
     "pages/my/index",
+    "pages/account/index",
     "pages/goods_detail/index",
     "pages/fruitworld/index",
     "pages/newgoods/index",

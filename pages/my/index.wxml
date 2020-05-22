@@ -1,2 +1,16 @@
-<!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class="snacksmark-my">
+  <block wx:if="{{userinfo == ''}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getuserinfo">登录</button>
+  </block>
+  <block wx:else>
+    <view class="snacksmark-my-userinfo">
+      <view class="snacksmark-my-userinfo-msg">
+        <view class="snacksmark-my-userinfo-img">
+          <image src="{{userinfo.avatarUrl}}"></image>
+        </view>
+        <view class="snacksmark-my-userinfo-name">{{userinfo.nickName}}</view>  
+      </view>
+      <view class="snacksmark-my-about">关于我们</view>
+    </view>
+  </block>
+</view>

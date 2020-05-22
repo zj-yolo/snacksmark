@@ -1,20 +1,31 @@
 <view class="snacksmark-cart">
-  <!-- 购物车数据 -->
-  <block wx:if="{{}}"></block>
-  <block wx:else></block>
-  <view class="snacksmark-cart-list">
+  <!-- 购物车数据为空显示语句-->
+  <block wx:if="{{cartItems.length==0}}">
+    <view class="snacksmark-cart-emp">
+      购物车是空的哦~
+    </view>
+  </block>
+  <!-- 购物车数据不为空渲染item -->
+  <block wx:else>
+    <view class="snacksmark-cart-list">
     <view class="snacksmark-cart-list-item" wx:for="{{cartItems}}" wx:key="title">
     <view  class="snacksmark-cart-list-item-left">
-      <view  class="snacksmark-cart-list-item-chk {{item.itemchk ? 'activechk' : ' ' }} " bindtap="handleItemchk" data-id="{{index}}"><text wx:if="{{item.itemchk }}">√</text></view>
+      <view  class="snacksmark-cart-list-item-chk  " bindtap="handleItemchk" data-id="{{index}}">
+      <icon type="success" color="red" wx:if="{{item.itemchk}}" size="64rpx"></icon>
+      </view>
     </view>
+            <view class="snacksmark-cart-list-item-section-img">
+          <image src="{{item.image}}"></image>
+        </view>
       <view  class="snacksmark-cart-list-item-right">
         <view  class="snacksmark-cart-list-item-section">
+
           <view class="snacksmark-cart-lsit-item-section-msg">
             {{item.title}}  {{item.count}}{{item.unit}}
           </view>
           <view class="snacksmark-cart-lsit-item-section-price">￥{{item.price}}</view>
         </view>
-        <view class="snacksmark-cart-lsit-item-opr">
+        <view class="snacksmark-cart-lsit-item-opr" >
           <view class="snacksmark-cart-lsit-item-opr-red" bindtap="handlRednum" data-id="{{index}}">-</view>
           <view class="snacksmark-cart-list-item-opr-num">{{item.num}}</view>
           <view class="snacksmark-cart-lsit-item-opr-add" bindtap="handlAddnum" data-id="{{index}}">+</view>
@@ -23,11 +34,12 @@
       </view>
     </view>
   </view>
+  </block>
   <!-- 底部全选 -->
   <view class="snacksmark-cart-footer">
     <view class="snacksmark-cart-footer-allchk">
       <view class="snacksmark-cart-footer-allchk-icon" bindtap="handleAllchk">
-        <text wx:if="{{allchk}}">√</text>
+        <icon type="success" color="red" wx:if="{{allchk}}" size="48rpx"></icon>
       </view>
       <view class="snacksmark-cart-footer-allchk-world">全选</view>
     </view>
@@ -35,7 +47,7 @@
       <view class="snacksmark-cart-footer-total-money">
         ￥{{totalmoney}}
       </view>
-      <navigator class="snacksmark-cart-footer-total-icon" >
+      <navigator class="snacksmark-cart-footer-total-icon" url='{{totalmoney == "0.00" ? "":"/pages/account/index"}}' bindtap="getselecteditem">
         <image src="../../image/icon3.png"></image>
       </navigator>
     </view>

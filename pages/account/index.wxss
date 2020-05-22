@@ -1,0 +1,56 @@
+.snacksmark-account-address {
+  height: 140rpx;
+  padding: 20rpx;
+  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+}
+.snacksmark-account-address .snacksmark-account-address-name {
+  width: 50%;
+}
+.snacksmark-account-address .snacksmark-account-address-tel {
+  width: 50%;
+}
+.snacks-account-division {
+  height: 26rpx;
+  background-color: #ededed;
+}
+.snacks-account-list-item {
+  height: 200rpx;
+  border-bottom: 5rpx solid #ededed;
+  display: flex;
+  padding: 20rpx;
+}
+.snacks-account-list-item .snacks-account-list-item-img {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 30rpx;
+}
+.snacks-account-list-item .snacks-account-list-item-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+.snacksmark-account-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 120rpx;
+  width: 100%;
+  border-top: 5rpx solid #ededed;
+  display: flex;
+  font-size: 40rpx;
+  line-height: 120rpx;
+}
+.snacksmark-account-footer .snacksmark-account-footer-left {
+  padding-left: 40rpx;
+  flex: 2;
+  color: #a65250;
+}
+.snacksmark-account-footer .snacksmark-account-footer-right {
+  text-align: center;
+  flex: 1;
+  background-color: var(--themeColor);
+  color: #fff;
+}

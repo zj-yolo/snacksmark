@@ -1,3 +1,8 @@
+.snacksmark-cart-emp {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
 .snacksmark-cart-list .snacksmark-cart-list-item {
   height: 180rpx;
   border-bottom: 2rpx solid #eee;
@@ -20,23 +25,25 @@
   border-radius: 50%;
   border: 2rpx solid #eee;
 }
-.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-left .snacksmark-cart-list-item-chk text {
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-left .snacksmark-cart-list-item-chk icon {
   position: absolute;
-  top: 0%;
-  left: 24%;
-  color: #fff;
+  top: -3rpx;
+  left: -2rpx;
+}
+.snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-section-img {
+  width: 150rpx;
+  height: 150rpx;
 }
 .snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-right {
   flex: 4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 80rpx;
 }
 .snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-right .snacksmark-cart-list-item-section {
   display: flex;
   justify-content: space-around;
-  padding: 0 30rpx;
+  padding: 10rpx 30rpx;
 }
 .snacksmark-cart-list .snacksmark-cart-list-item .snacksmark-cart-list-item-right .snacksmark-cart-lsit-item-opr {
   display: flex;
@@ -69,10 +76,10 @@
   border: 2rpx solid #fff;
   margin: 0 20rpx;
 }
-.snacksmark-cart-footer .snacksmark-cart-footer-allchk .snacksmark-cart-footer-allchk-icon text {
+.snacksmark-cart-footer .snacksmark-cart-footer-allchk .snacksmark-cart-footer-allchk-icon icon {
   position: absolute;
-  top: -8%;
-  left: 20%;
+  top: -4rpx;
+  left: -3px;
 }
 .snacksmark-cart-footer .snacksmark-cart-footer-total {
   display: flex;
